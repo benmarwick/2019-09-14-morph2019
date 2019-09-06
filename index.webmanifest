@@ -14,5 +14,5 @@
     "type": "image/png"
      }],
   "display": "standalone",
-  "start_url": "/2019-09-14-morph2019/?utm_source=web_app_manifest"
+  "start_url": "/?utm_source=web_app_manifest"
 }
