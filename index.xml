@@ -189,7 +189,7 @@ usethis::browse_github_pat()
 
 &lt;p&gt;We are going to do live-coding demonstration of how to import data into R in our &lt;code&gt;paper.Rmd&lt;/code&gt;. You need to save this to your computer (click to download):&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://benmarwick.github.io/2019-09-14-morph2019/Hoggard_et_al_2019_raw_data.zip&#34;&gt;Hoggard_et_al_2019_raw_data.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/benmarwick/2019-09-14-morph2019/raw/master/Hoggard_et_al_2019_raw_data.zip&#34; target=&#34;_blank&#34;&gt;Hoggard_et_al_2019_raw_data.zip&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Then upload to &lt;code&gt;analysis/data/raw-data&lt;/code&gt;, it will unzip into two files.&lt;/p&gt;
 
@@ -216,7 +216,7 @@ tpsfile &amp;lt;-
 
 &lt;p&gt;Now we will insert into our &lt;code&gt;paper.Rmd&lt;/code&gt; some &lt;strong&gt;external R code&lt;/strong&gt; that is in an R script file. Sometimes we don&amp;rsquo;t want to have all our R code in the &lt;code&gt;paper.Rmd&lt;/code&gt; because it makes it hard to read and navigate.  You need to save this R script file to your computer (right-click, &amp;lsquo;save link as&amp;rsquo; to download):&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://benmarwick.github.io/2019-09-14-morph2019/Hoggard_et_al_2019_BM.R&#34;&gt;Hoggard_et_al_2019_BM.R&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/benmarwick/2019-09-14-morph2019/raw/master/Hoggard_et_al_2019_BM.R&#34; target=&#34;_blank&#34;&gt;Hoggard_et_al_2019_BM.R&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Then upload it to &lt;code&gt;analysis/paper&lt;/code&gt;.&lt;/p&gt;
 
