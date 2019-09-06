@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Overview | Reproducibility and Transparency in Archaeological Science: A workshop at MORPH2019</title>
+    <link>/</link>
+      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <description>Overview</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Overview</title>
+      <link>/</link>
+    </image>
+    
+    <item>
+      <title>Creating a reproducible research compendium</title>
+      <link>/example1/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      <guid>/example1/</guid>
+      <description>
+
+&lt;p&gt;To create a reproducible research compendium step-by-step using the rrtools approach, follow these detailed instructions. We use &lt;a href=&#34;https://www.rstudio.com/products/rstudio/#Desktop&#34; target=&#34;_blank&#34;&gt;RStudio&lt;/a&gt;, and recommend it, but is not required for these steps to work. We recommend copy-pasting these directly into your console, and editing the options before running. We don&amp;rsquo;t recommend saving these lines in a script in your project: they are meant to be once-off setup functions run at the console.&lt;/p&gt;
+
+&lt;p&gt;Please start by:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Got to &lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt; and register for a free account.&lt;/li&gt;
+&lt;li&gt;Logging into our &lt;a href=&#34;https://rstudio.cloud/project/493309&#34; target=&#34;_blank&#34;&gt;https://rstudio.cloud/project/493309&lt;/a&gt;, use your GitHub account to log in&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We will run the workshop code in the rstudio.cloud service because it will save us time. I have already installed many packages there, so we don&amp;rsquo;t have to wait for that in the workshop.&lt;/p&gt;
+
+&lt;h2 id=&#34;create-a-basic-r-package&#34;&gt;Create a basic R package&lt;/h2&gt;
+
+&lt;p&gt;Run this line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rrtools::use_compendium(&amp;quot;pkgname&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;this uses &lt;code&gt;usethis::create_package()&lt;/code&gt; to create a basic R package with the name &lt;code&gt;pkgname&lt;/code&gt; (you should use a different one), and then, if you&amp;rsquo;re using RStudio, opens the project. If you&amp;rsquo;re not using RStudio, it sets the working directory to the &lt;code&gt;pkgname&lt;/code&gt; directory.&lt;/li&gt;
+&lt;li&gt;we need to:
+
+&lt;ul&gt;
+&lt;li&gt;choose a location for the compendium package. We recommend you set the working directory in RStudio using the drop-down menu: &lt;code&gt;Session&lt;/code&gt; -&amp;gt; &lt;code&gt;Set Working Directory&lt;/code&gt; and then run &lt;code&gt;rrtools::use_compendium(&amp;quot;pkgname&amp;quot;)&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;edit the &lt;code&gt;DESCRIPTION&lt;/code&gt; file (located in your &lt;code&gt;pkgname&lt;/code&gt; directory) to include accurate metadata&lt;/li&gt;
+&lt;li&gt;periodically update the &lt;code&gt;Imports:&lt;/code&gt; section of the &lt;code&gt;DESCRIPTION&lt;/code&gt; file with the names of packages used in the code we write in the Rmd document(s) (e.g., &lt;code&gt;usethis::use_package(&amp;quot;dplyr&amp;quot;, &amp;quot;imports&amp;quot;)&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;attach-a-license-to-our-compendium&#34;&gt;Attach a license to our compendium&lt;/h2&gt;
+
+&lt;p&gt;Run this line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;usethis::use_mit_license(name = &amp;quot;My Name&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;this adds a reference to the MIT license in the DESCRIPTION file and generates a LICENSE file listing the name provided as the copyright holder&lt;/li&gt;
+&lt;li&gt;to use a different license, replace this line with &lt;code&gt;usethis::use_gpl3_license(name = &amp;quot;My Name&amp;quot;)&lt;/code&gt;, or follow the instructions for other licenses&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;start-version-control-and-make-a-github-repository-for-our-compendium&#34;&gt;Start version control and make a GitHub repository for our compendium&lt;/h2&gt;
+
+&lt;p&gt;Then run this line to tell Git who we are on your computer:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;usethis::use_git_config(user.name = &amp;quot;Jane Doe&amp;quot;, user.email = &amp;quot;jane@example.com&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then run these lines:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;usethis::use_git()
+# open up the GitHub panel to generate 
+# your Personal Authorisation Token (PAT) 
+usethis::browse_github_pat() 
+# get a token from https://github.com/settings/tokens
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After you get the token from GitHub, save it in your environment:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;usethis::edit_r_environ() 
+# Paste your copied PAT into your .Renviron file as system variable: 
+# GITHUB_PAT=XXXXXX
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Restart R, then run this line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;usethis::use_github(protocol = &amp;quot;https&amp;quot;, 
+                    private = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;if you are connected to the internet, this initializes a local git repository (&lt;code&gt;use_git()&lt;/code&gt;), then &lt;code&gt;use_github()&lt;/code&gt; connects to &lt;a href=&#34;https://github.com&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt;, and creates a remote repository&lt;/li&gt;
+&lt;li&gt;if you are not connected to the internet, use &lt;code&gt;use_git()&lt;/code&gt; to initialise a local git repository for your project, and save the &lt;code&gt;use_github&lt;/code&gt; step for when you are online. Reopen your project in RStudio to see the git buttons on the toolbar.&lt;/li&gt;
+&lt;li&gt;we need to:
+
+&lt;ul&gt;
+&lt;li&gt;install and configure git &lt;em&gt;before&lt;/em&gt; running this line. See &lt;a href=&#34;http://happygitwithr.com&#34; target=&#34;_blank&#34;&gt;Happy Git With R&lt;/a&gt; for details on how to do this. Make sure to set up a &lt;a href=&#34;https://happygitwithr.com/ssh-keys.html&#34; target=&#34;_blank&#34;&gt;SSH key&lt;/a&gt; to connect to your Github account conveniently.&lt;/li&gt;
+&lt;li&gt;get a &lt;a href=&#34;https://github.com/settings/tokens&#34; target=&#34;_blank&#34;&gt;personal access token&lt;/a&gt;, and replace &amp;ldquo;xxxx&amp;rdquo; with that token. When you do so (click &amp;ldquo;Generate new token&amp;rdquo;), make sure the &amp;ldquo;repo&amp;rdquo; scope is included by checking the &amp;ldquo;repo&amp;rdquo; box. Don&amp;rsquo;t save this token in your project, keep it elsewhere.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;make-a-readme-document-a-code-of-conduct-and-a-guide-for-contributors&#34;&gt;Make a readme document, a code of conduct and a guide for contributors&lt;/h2&gt;
+
+&lt;p&gt;Run this line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rrtools::use_readme_rmd()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then commit and push to GitHub, then browse your files on GitHub and see how the Readme file looks.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;this generates README.Rmd and renders it to README.md, ready to display on GitHub. It contains:
+
+&lt;ul&gt;
+&lt;li&gt;a template citation to show others how to cite your project. Edit this to include the correct title and &lt;a href=&#34;https://doi.org&#34; target=&#34;_blank&#34;&gt;DOI&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;license information for the text, figures, code and data in your compendium&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;this also adds two other markdown files: a code of conduct for users CONDUCT.md, and basic instructions for people who want to contribute to your project CONTRIBUTING.md, including for first-timers to git and GitHub.&lt;/li&gt;
+&lt;li&gt;render this document after each change to refresh README.md, which is the file that GitHub displays on the repository home page&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;create-a-compendium-file-structure-and-add-template-files&#34;&gt;Create a compendium file structure and add template files&lt;/h2&gt;
+
+&lt;p&gt;Run this line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rrtools::use_analysis()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then knit the Rmd document right away to see how the template looks.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;this function has three &lt;code&gt;location =&lt;/code&gt; options: &lt;code&gt;top_level&lt;/code&gt; to create a top-level &lt;code&gt;analysis/&lt;/code&gt; directory, &lt;code&gt;inst&lt;/code&gt; to create an &lt;code&gt;inst/&lt;/code&gt; directory (so that all the sub-directories are available after the package is installed), and &lt;code&gt;vignettes&lt;/code&gt; to create a &lt;code&gt;vignettes/&lt;/code&gt; directory (and automatically update the &lt;code&gt;DESCRIPTION&lt;/code&gt;). The default is a top-level &lt;code&gt;analysis/&lt;/code&gt;.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;for each option, the contents of the sub-directories are the same, with the following (using the default &lt;code&gt;analysis/&lt;/code&gt; for example):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;analysis/
+|
+├── paper/
+│   ├── paper.Rmd       # this is the main document to edit
+│   └── references.bib  # this contains the reference list information
+├── figures/            # location of the figures produced by the Rmd
+|
+├── data/
+│   ├── raw_data/       # data obtained from elsewhere
+│   └── derived_data/   # data generated during the analysis
+|
+└── templates
+├── journal-of-archaeological-science.csl
+|                   # this sets the style of citations &amp;amp; reference list
+├── template.docx   # used to style the output of the paper.Rmd
+└── template.Rmd
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the &lt;code&gt;paper.Rmd&lt;/code&gt; is ready to write in and render with bookdown. It includes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a YAML header that identifies the &lt;code&gt;references.bib&lt;/code&gt; file and the supplied &lt;code&gt;csl&lt;/code&gt; file (to style the reference list)&lt;/li&gt;
+&lt;li&gt;a colophon that adds some git commit details to the end of the document. This means that the output file (HTML/PDF/Word) is always traceable to a specific state of the code.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the &lt;code&gt;references.bib&lt;/code&gt; file has just one item to demonstrate the format. It is ready to insert more reference details.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;you can replace the supplied &lt;code&gt;csl&lt;/code&gt; file with a different citation style from &lt;a href=&#34;https://github.com/citation-style-language/&#34; target=&#34;_blank&#34;&gt;https://github.com/citation-style-language/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;we recommend using the &lt;a href=&#34;https://github.com/crsh/citr&#34; target=&#34;_blank&#34;&gt;citr addin&lt;/a&gt; and &lt;a href=&#34;https://www.zotero.org/&#34; target=&#34;_blank&#34;&gt;Zotero&lt;/a&gt; to efficiently insert citations while writing in an Rmd file&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;remember that the &lt;code&gt;Imports:&lt;/code&gt; field in the &lt;code&gt;DESCRIPTION&lt;/code&gt; file must include the names of all packages used in analysis documents (e.g. &lt;code&gt;paper.Rmd&lt;/code&gt;). We have a helper function &lt;code&gt;rrtools::add_dependencies_to_description()&lt;/code&gt; that will scan the Rmd file, identify libraries used in there, and add them to the &lt;code&gt;DESCRIPTION&lt;/code&gt; file.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;this function has an &lt;code&gt;data_in_git =&lt;/code&gt; argument, which is &lt;code&gt;TRUE&lt;/code&gt; by default. If set to &lt;code&gt;FALSE&lt;/code&gt; you will exclude files in the &lt;code&gt;data/&lt;/code&gt; directory from being tracked by git and prevent them from appearing on GitHub. You should set &lt;code&gt;data_in_git = FALSE&lt;/code&gt; if your data files are large (&amp;gt;100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To load your custom code in the &lt;code&gt;paper.Rmd&lt;/code&gt;, you have a few options. You can write all your R code in chunks in the Rmd, that&amp;rsquo;s the simplest method. Or you can write R code in script files in &lt;code&gt;/R&lt;/code&gt;, and include &lt;code&gt;devtools::load_all(&amp;quot;.&amp;quot;)&lt;/code&gt; at the top of your &lt;code&gt;paper.Rmd&lt;/code&gt;. Or you can write functions in &lt;code&gt;/R&lt;/code&gt; and use &lt;code&gt;library(pkgname)&lt;/code&gt; at the top of your &lt;code&gt;paper.Rmd&lt;/code&gt;, or omit &lt;code&gt;library&lt;/code&gt; and preface each function call with &lt;code&gt;pkgname::&lt;/code&gt;. Up to you to choose whatever seems most natural to you.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Writing with R Markdown</title>
+      <link>/example2/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      <guid>/example2/</guid>
+      <description>
+
+&lt;p&gt;For these activities we will use code and data from the excellent article by &lt;a href=&#34;https://doi.org/10.1007/s41982-019-00024-6&#34; target=&#34;_blank&#34;&gt;Hoggard et al. 2019&lt;/a&gt;. I have slightly modified the code from the original.&lt;/p&gt;
+
+&lt;h2 id=&#34;code-chunks-in-line-code&#34;&gt;Code chunks, in-line code&lt;/h2&gt;
+
+&lt;p&gt;We are going to do live-coding demonstration of how to import data into R in our &lt;code&gt;paper.Rmd&lt;/code&gt;. You need to save this to your computer (click to download):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;/Hoggard_et_al_2019_raw_data.zip&#34;&gt;Hoggard_et_al_2019_raw_data.zip&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Then upload to &lt;code&gt;analysis/data/raw-data&lt;/code&gt;, it will unzip into two files.&lt;/p&gt;
+
+&lt;p&gt;Now add a &lt;strong&gt;chunk of code&lt;/strong&gt; to your &lt;code&gt;paper.Rmd&lt;/code&gt; that looks exactly like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;```{r get-data}
+database &amp;lt;- 
+  read_csv(here::here(&#39;analysis/data/raw_data/Hoggard_et_al_2019.csv&#39;))
+
+tpsfile &amp;lt;- 
+  read_rds(here::here(&#39;analysis/data/raw_data/Hoggard_et_al_2019_tps.rds&#39;))
+```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To use &lt;strong&gt;in-line R code&lt;/strong&gt;, we can write short sentence in our &lt;code&gt;paper.Rmd&lt;/code&gt; like this, with the single backticks:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The data has &lt;code&gt;`r nrow(database)`&lt;/code&gt; specimens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now knit the document and inspect the output.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-external-code&#34;&gt;Using external code&lt;/h2&gt;
+
+&lt;p&gt;Now we will insert into our &lt;code&gt;paper.Rmd&lt;/code&gt; some &lt;strong&gt;external R code&lt;/strong&gt; that is in an R script file. Sometimes we don&amp;rsquo;t want to have all our R code in the &lt;code&gt;paper.Rmd&lt;/code&gt; because it makes it hard to read and navigate.  You need to save this R script file to your computer (right-click, &amp;lsquo;save link as&amp;rsquo; to download):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;/Hoggard_et_al_2019_BM.R&#34;&gt;Hoggard_et_al_2019_BM.R&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Then upload it to &lt;code&gt;analysis/paper&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here is the pattern to include code from the R script file into your &lt;code&gt;paper.Rmd&lt;/code&gt;: First we use &lt;code&gt;knitr::read_chunk&lt;/code&gt; to identify our R script file. Then in the R code chunks we can reference the names of sections in that R script file. To try this, you need to copy and paste these lines into your &lt;code&gt;paper.Rmd&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;
+```{r}
+knitr::read_chunk(&#39;Hoggard_et_al_2019_BM.R&#39;)
+```
+
+```{r Compute-symmetry-and-PCA}
+```
+
+```{r figure-1}
+```
+
+```{r figure-3}
+```
+
+```{r table-3}
+```
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;captions-cross-references&#34;&gt;Captions &amp;amp; cross-references&lt;/h2&gt;
+
+&lt;p&gt;There are two commonly used methods to add captions. First is in the code chunk header, like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;
+```{r figure-1, fig.cap = &amp;quot;An exploration of biface shape and Marine Isotope Stage (MIS) through an elliptic Fourier principal component analysis (EFA-PCA). Confidence ellipses are here set to two-thirds (66.66%)&amp;quot;}
+```
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And the second way is outside of the code chunk using the &lt;code&gt;(ref:xxx)&lt;/code&gt; pattern. This method is useful if you want to format the text or use inline R code in the caption:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;
+(ref:figure-3-caption) An examination of symmetry (AD harmonic coefficients/amplitude) through a histogram (a), and two box-and-whisker plots (Tukey style) examining symmetry against individual Marine Isotope Stage (b), and against individual sites (c)
+
+```{r figure-3, fig.cap = &#39;(ref:figure-3-caption)&#39; }
+```
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To cross-reference a plot produced by a code chunk, we use the pattern &lt;code&gt;\@ref(fig:label)&lt;/code&gt;, where label is the code chunk ID. To cross-reference Figure 3, we would write this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Please see Figure &lt;code&gt;\@ref(fig:figure-3)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And after we knit, we will see &amp;lsquo;Please see Figure 3&amp;rsquo;&lt;/p&gt;
+
+&lt;h2 id=&#34;figures-and-tables&#34;&gt;Figures and tables&lt;/h2&gt;
+
+&lt;p&gt;Often we want to include figures in our paper that are not generated by R code. For example, photographs or drawings.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;
+
+```{r my-photo, fig.cap = &amp;quot;My photo&amp;quot; }
+knitr::include_graphics()
+```
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;citations-and-references&#34;&gt;Citations and references&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

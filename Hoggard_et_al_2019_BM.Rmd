@@ -1,0 +1,49 @@
+---
+title: ""
+output: bookdown::html_document2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE,
+                      echo = FALSE)
+```
+
+```{r get-data}
+library(tidyverse)
+database <- 
+  read_csv('Hoggard_et_al_2019.csv')
+
+tpsfile <- 
+  read_rds('Hoggard_et_al_2019_tps.rds')
+```
+
+
+The data has `r nrow(database)` specimens
+
+
+
+
+```{r}
+knitr::read_chunk('Hoggard_et_al_2019_BM.R')
+```
+
+```{r Compute-symmetry-and-PCA}
+```
+
+```{r figure-1, fig.cap = "An exploration of biface shape and Marine Isotope Stage (MIS) through an elliptic Fourier principal component analysis (EFA-PCA). Confidence ellipses are here set to two-thirds (66.66%)"}
+```
+
+(ref:figure-3-caption) An examination of symmetry (AD harmonic coefficients/amplitude) through a histogram (a), and two box-and-whisker plots (Tukey style) examining symmetry against individual Marine Isotope Stage (b), and against individual sites (c)
+
+```{r figure-3, fig.cap = '(ref:figure-3-caption)' }
+```
+
+Please see Figure \@ref(fig:figure-3)
+
+```{r table-3}
+```
+
+
+
+

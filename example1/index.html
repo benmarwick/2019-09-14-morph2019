@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="To create a reproducible research compendium step-by-step using the rrtools approach, follow these detailed instructions. We use RStudio, and recommend it, but is not required for these steps to work. We recommend copy-pasting these directly into your console, and editing the options before running. We don&rsquo;t recommend saving these lines in a script in your project: they are meant to be once-off setup functions run at the console.
+Please start by:">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/example1/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.04a87a1cb9027e3c50f566322527c56f.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/example1/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Reproducibility and Transparency in Archaeological Science: A workshop at MORPH2019">
+  <meta property="og:url" content="/example1/">
+  <meta property="og:title" content="Creating a reproducible research compendium | Reproducibility and Transparency in Archaeological Science: A workshop at MORPH2019">
+  <meta property="og:description" content="To create a reproducible research compendium step-by-step using the rrtools approach, follow these detailed instructions. We use RStudio, and recommend it, but is not required for these steps to work. We recommend copy-pasting these directly into your console, and editing the options before running. We don&rsquo;t recommend saving these lines in a script in your project: they are meant to be once-off setup functions run at the console.
+Please start by:"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-05-05T00:00:00&#43;01:00">
+    
+    <meta property="article:modified_time" content="2019-05-05T00:00:00&#43;01:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Creating a reproducible research compendium | Reproducibility and Transparency in Archaeological Science: A workshop at MORPH2019</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Reproducibility and Transparency in Archaeological Science: A workshop at MORPH2019</a>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/">Overview</a>
+    <ul class="nav docs-sidenav">
+      
+      <li class="active">
+        <a href="/example1/">Creating a reproducible research compendium</a>
+      </li>
+      
+      <li >
+        <a href="/example2/">Writing with R Markdown</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#create-a-basic-r-package">Create a basic R package</a></li>
+<li><a href="#attach-a-license-to-our-compendium">Attach a license to our compendium</a></li>
+<li><a href="#start-version-control-and-make-a-github-repository-for-our-compendium">Start version control and make a GitHub repository for our compendium</a></li>
+<li><a href="#make-a-readme-document-a-code-of-conduct-and-a-guide-for-contributors">Make a readme document, a code of conduct and a guide for contributors</a></li>
+<li><a href="#create-a-compendium-file-structure-and-add-template-files">Create a compendium file structure and add template files</a></li>
+</ul></li>
+</ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Creating a reproducible research compendium</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<p>To create a reproducible research compendium step-by-step using the rrtools approach, follow these detailed instructions. We use <a href="https://www.rstudio.com/products/rstudio/#Desktop" target="_blank">RStudio</a>, and recommend it, but is not required for these steps to work. We recommend copy-pasting these directly into your console, and editing the options before running. We don&rsquo;t recommend saving these lines in a script in your project: they are meant to be once-off setup functions run at the console.</p>
+
+<p>Please start by:</p>
+
+<ul>
+<li>Got to <a href="https://github.com/" target="_blank">GitHub</a> and register for a free account.</li>
+<li>Logging into our <a href="https://rstudio.cloud/project/493309" target="_blank">https://rstudio.cloud/project/493309</a>, use your GitHub account to log in</li>
+</ul>
+
+<p>We will run the workshop code in the rstudio.cloud service because it will save us time. I have already installed many packages there, so we don&rsquo;t have to wait for that in the workshop.</p>
+
+<h2 id="create-a-basic-r-package">Create a basic R package</h2>
+
+<p>Run this line:</p>
+
+<pre><code>rrtools::use_compendium(&quot;pkgname&quot;)
+</code></pre>
+
+<ul>
+<li>this uses <code>usethis::create_package()</code> to create a basic R package with the name <code>pkgname</code> (you should use a different one), and then, if you&rsquo;re using RStudio, opens the project. If you&rsquo;re not using RStudio, it sets the working directory to the <code>pkgname</code> directory.</li>
+<li>we need to:
+
+<ul>
+<li>choose a location for the compendium package. We recommend you set the working directory in RStudio using the drop-down menu: <code>Session</code> -&gt; <code>Set Working Directory</code> and then run <code>rrtools::use_compendium(&quot;pkgname&quot;)</code>.</li>
+<li>edit the <code>DESCRIPTION</code> file (located in your <code>pkgname</code> directory) to include accurate metadata</li>
+<li>periodically update the <code>Imports:</code> section of the <code>DESCRIPTION</code> file with the names of packages used in the code we write in the Rmd document(s) (e.g., <code>usethis::use_package(&quot;dplyr&quot;, &quot;imports&quot;)</code>)</li>
+</ul></li>
+</ul>
+
+<h2 id="attach-a-license-to-our-compendium">Attach a license to our compendium</h2>
+
+<p>Run this line:</p>
+
+<pre><code>usethis::use_mit_license(name = &quot;My Name&quot;)
+</code></pre>
+
+<ul>
+<li>this adds a reference to the MIT license in the DESCRIPTION file and generates a LICENSE file listing the name provided as the copyright holder</li>
+<li>to use a different license, replace this line with <code>usethis::use_gpl3_license(name = &quot;My Name&quot;)</code>, or follow the instructions for other licenses</li>
+</ul>
+
+<h2 id="start-version-control-and-make-a-github-repository-for-our-compendium">Start version control and make a GitHub repository for our compendium</h2>
+
+<p>Then run this line to tell Git who we are on your computer:</p>
+
+<pre><code>usethis::use_git_config(user.name = &quot;Jane Doe&quot;, user.email = &quot;jane@example.com&quot;)
+</code></pre>
+
+<p>Then run these lines:</p>
+
+<pre><code>usethis::use_git()
+# open up the GitHub panel to generate 
+# your Personal Authorisation Token (PAT) 
+usethis::browse_github_pat() 
+# get a token from https://github.com/settings/tokens
+</code></pre>
+
+<p>After you get the token from GitHub, save it in your environment:</p>
+
+<pre><code>usethis::edit_r_environ() 
+# Paste your copied PAT into your .Renviron file as system variable: 
+# GITHUB_PAT=XXXXXX
+</code></pre>
+
+<p>Restart R, then run this line:</p>
+
+<pre><code>usethis::use_github(protocol = &quot;https&quot;, 
+                    private = FALSE)
+</code></pre>
+
+<ul>
+<li>if you are connected to the internet, this initializes a local git repository (<code>use_git()</code>), then <code>use_github()</code> connects to <a href="https://github.com" target="_blank">GitHub</a>, and creates a remote repository</li>
+<li>if you are not connected to the internet, use <code>use_git()</code> to initialise a local git repository for your project, and save the <code>use_github</code> step for when you are online. Reopen your project in RStudio to see the git buttons on the toolbar.</li>
+<li>we need to:
+
+<ul>
+<li>install and configure git <em>before</em> running this line. See <a href="http://happygitwithr.com" target="_blank">Happy Git With R</a> for details on how to do this. Make sure to set up a <a href="https://happygitwithr.com/ssh-keys.html" target="_blank">SSH key</a> to connect to your Github account conveniently.</li>
+<li>get a <a href="https://github.com/settings/tokens" target="_blank">personal access token</a>, and replace &ldquo;xxxx&rdquo; with that token. When you do so (click &ldquo;Generate new token&rdquo;), make sure the &ldquo;repo&rdquo; scope is included by checking the &ldquo;repo&rdquo; box. Don&rsquo;t save this token in your project, keep it elsewhere.</li>
+</ul></li>
+</ul>
+
+<h2 id="make-a-readme-document-a-code-of-conduct-and-a-guide-for-contributors">Make a readme document, a code of conduct and a guide for contributors</h2>
+
+<p>Run this line:</p>
+
+<pre><code>rrtools::use_readme_rmd()
+</code></pre>
+
+<p>Then commit and push to GitHub, then browse your files on GitHub and see how the Readme file looks.</p>
+
+<ul>
+<li>this generates README.Rmd and renders it to README.md, ready to display on GitHub. It contains:
+
+<ul>
+<li>a template citation to show others how to cite your project. Edit this to include the correct title and <a href="https://doi.org" target="_blank">DOI</a>.</li>
+<li>license information for the text, figures, code and data in your compendium</li>
+</ul></li>
+<li>this also adds two other markdown files: a code of conduct for users CONDUCT.md, and basic instructions for people who want to contribute to your project CONTRIBUTING.md, including for first-timers to git and GitHub.</li>
+<li>render this document after each change to refresh README.md, which is the file that GitHub displays on the repository home page</li>
+</ul>
+
+<h2 id="create-a-compendium-file-structure-and-add-template-files">Create a compendium file structure and add template files</h2>
+
+<p>Run this line:</p>
+
+<pre><code>rrtools::use_analysis()
+</code></pre>
+
+<p>Then knit the Rmd document right away to see how the template looks.</p>
+
+<ul>
+<li>this function has three <code>location =</code> options: <code>top_level</code> to create a top-level <code>analysis/</code> directory, <code>inst</code> to create an <code>inst/</code> directory (so that all the sub-directories are available after the package is installed), and <code>vignettes</code> to create a <code>vignettes/</code> directory (and automatically update the <code>DESCRIPTION</code>). The default is a top-level <code>analysis/</code>.</li>
+
+<li><p>for each option, the contents of the sub-directories are the same, with the following (using the default <code>analysis/</code> for example):</p>
+
+<pre><code>analysis/
+|
+├── paper/
+│   ├── paper.Rmd       # this is the main document to edit
+│   └── references.bib  # this contains the reference list information
+├── figures/            # location of the figures produced by the Rmd
+|
+├── data/
+│   ├── raw_data/       # data obtained from elsewhere
+│   └── derived_data/   # data generated during the analysis
+|
+└── templates
+├── journal-of-archaeological-science.csl
+|                   # this sets the style of citations &amp; reference list
+├── template.docx   # used to style the output of the paper.Rmd
+└── template.Rmd
+</code></pre></li>
+
+<li><p>the <code>paper.Rmd</code> is ready to write in and render with bookdown. It includes:</p>
+
+<ul>
+<li>a YAML header that identifies the <code>references.bib</code> file and the supplied <code>csl</code> file (to style the reference list)</li>
+<li>a colophon that adds some git commit details to the end of the document. This means that the output file (HTML/PDF/Word) is always traceable to a specific state of the code.</li>
+</ul></li>
+
+<li><p>the <code>references.bib</code> file has just one item to demonstrate the format. It is ready to insert more reference details.</p></li>
+
+<li><p>you can replace the supplied <code>csl</code> file with a different citation style from <a href="https://github.com/citation-style-language/" target="_blank">https://github.com/citation-style-language/</a></p></li>
+
+<li><p>we recommend using the <a href="https://github.com/crsh/citr" target="_blank">citr addin</a> and <a href="https://www.zotero.org/" target="_blank">Zotero</a> to efficiently insert citations while writing in an Rmd file</p></li>
+
+<li><p>remember that the <code>Imports:</code> field in the <code>DESCRIPTION</code> file must include the names of all packages used in analysis documents (e.g. <code>paper.Rmd</code>). We have a helper function <code>rrtools::add_dependencies_to_description()</code> that will scan the Rmd file, identify libraries used in there, and add them to the <code>DESCRIPTION</code> file.</p></li>
+
+<li><p>this function has an <code>data_in_git =</code> argument, which is <code>TRUE</code> by default. If set to <code>FALSE</code> you will exclude files in the <code>data/</code> directory from being tracked by git and prevent them from appearing on GitHub. You should set <code>data_in_git = FALSE</code> if your data files are large (&gt;100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.</p>
+
+<ul>
+<li>To load your custom code in the <code>paper.Rmd</code>, you have a few options. You can write all your R code in chunks in the Rmd, that&rsquo;s the simplest method. Or you can write R code in script files in <code>/R</code>, and include <code>devtools::load_all(&quot;.&quot;)</code> at the top of your <code>paper.Rmd</code>. Or you can write functions in <code>/R</code> and use <code>library(pkgname)</code> at the top of your <code>paper.Rmd</code>, or omit <code>library</code> and preface each function call with <code>pkgname::</code>. Up to you to choose whatever seems most natural to you.</li>
+</ul></li>
+</ul>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/example2/" rel="prev">Writing with R Markdown</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on May 5, 2019</p>
+
+          
+<p class="edit-page">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/example1.md">
+    <i class="fas fa-pen pr-2"></i>Edit this page
+  </a>
+</p>
+
+
+
+          
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+
+    
+
+
+
+
+
+
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
