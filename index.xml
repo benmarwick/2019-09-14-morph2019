@@ -183,7 +183,7 @@ usethis::browse_github_pat()
       <guid>https://benmarwick.github.io/2019-09-14-morph2019/example2/</guid>
       <description>
 
-&lt;p&gt;For these activities we will use code and data from the excellent article by &lt;a href=&#34;https://doi.org/10.1007/s41982-019-00024-6&#34; target=&#34;_blank&#34;&gt;Hoggard et al. 2019&lt;/a&gt;. I have slightly modified the code from the original.&lt;/p&gt;
+&lt;p&gt;For these activities we will use code and data from the excellent article by &lt;a href=&#34;https://doi.org/10.1007/s41982-019-00024-6&#34; target=&#34;_blank&#34;&gt;Hoggard et al. 2019&lt;/a&gt;. The authors have made their materials online at &lt;a href=&#34;https://osf.io/g29eu/&#34; target=&#34;_blank&#34;&gt;https://osf.io/g29eu/&lt;/a&gt;. I have slightly modified the code from the original.&lt;/p&gt;
 
 &lt;h2 id=&#34;code-chunks-in-line-code&#34;&gt;Code chunks, in-line code&lt;/h2&gt;
 
