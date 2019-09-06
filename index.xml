@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Overview | Reproducibility and Transparency in Archaeological Science: A workshop at MORPH2019</title>
-    <link>https://benmarwick.github.io/</link>
-      <atom:link href="https://benmarwick.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://benmarwick.github.io/2019-09-14-morph2019/</link>
+      <atom:link href="https://benmarwick.github.io/2019-09-14-morph2019/index.xml" rel="self" type="application/rss+xml" />
     <description>Overview</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://benmarwick.github.io/img/icon-192.png</url>
+      <url>https://benmarwick.github.io/2019-09-14-morph2019/img/icon-192.png</url>
       <title>Overview</title>
-      <link>https://benmarwick.github.io/</link>
+      <link>https://benmarwick.github.io/2019-09-14-morph2019/</link>
     </image>
     
     <item>
       <title>Creating a reproducible research compendium</title>
-      <link>https://benmarwick.github.io/example1/</link>
+      <link>https://benmarwick.github.io/2019-09-14-morph2019/example1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>https://benmarwick.github.io/example1/</guid>
+      <guid>https://benmarwick.github.io/2019-09-14-morph2019/example1/</guid>
       <description>
 
 &lt;p&gt;To create a reproducible research compendium step-by-step using the rrtools approach, follow these detailed instructions. We use &lt;a href=&#34;https://www.rstudio.com/products/rstudio/#Desktop&#34; target=&#34;_blank&#34;&gt;RStudio&lt;/a&gt;, and recommend it, but is not required for these steps to work. We recommend copy-pasting these directly into your console, and editing the options before running. We don&amp;rsquo;t recommend saving these lines in a script in your project: they are meant to be once-off setup functions run at the console.&lt;/p&gt;
@@ -178,9 +178,9 @@ usethis::browse_github_pat()
     
     <item>
       <title>Writing with R Markdown</title>
-      <link>https://benmarwick.github.io/example2/</link>
+      <link>https://benmarwick.github.io/2019-09-14-morph2019/example2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>https://benmarwick.github.io/example2/</guid>
+      <guid>https://benmarwick.github.io/2019-09-14-morph2019/example2/</guid>
       <description>
 
 &lt;p&gt;For these activities we will use code and data from the excellent article by &lt;a href=&#34;https://doi.org/10.1007/s41982-019-00024-6&#34; target=&#34;_blank&#34;&gt;Hoggard et al. 2019&lt;/a&gt;. I have slightly modified the code from the original.&lt;/p&gt;
@@ -189,7 +189,7 @@ usethis::browse_github_pat()
 
 &lt;p&gt;We are going to do live-coding demonstration of how to import data into R in our &lt;code&gt;paper.Rmd&lt;/code&gt;. You need to save this to your computer (click to download):&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://benmarwick.github.io/Hoggard_et_al_2019_raw_data.zip&#34;&gt;Hoggard_et_al_2019_raw_data.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://benmarwick.github.io/2019-09-14-morph2019/Hoggard_et_al_2019_raw_data.zip&#34;&gt;Hoggard_et_al_2019_raw_data.zip&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Then upload to &lt;code&gt;analysis/data/raw-data&lt;/code&gt;, it will unzip into two files.&lt;/p&gt;
 
@@ -216,7 +216,7 @@ tpsfile &amp;lt;-
 
 &lt;p&gt;Now we will insert into our &lt;code&gt;paper.Rmd&lt;/code&gt; some &lt;strong&gt;external R code&lt;/strong&gt; that is in an R script file. Sometimes we don&amp;rsquo;t want to have all our R code in the &lt;code&gt;paper.Rmd&lt;/code&gt; because it makes it hard to read and navigate.  You need to save this R script file to your computer (right-click, &amp;lsquo;save link as&amp;rsquo; to download):&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://benmarwick.github.io/Hoggard_et_al_2019_BM.R&#34;&gt;Hoggard_et_al_2019_BM.R&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://benmarwick.github.io/2019-09-14-morph2019/Hoggard_et_al_2019_BM.R&#34;&gt;Hoggard_et_al_2019_BM.R&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Then upload it to &lt;code&gt;analysis/paper&lt;/code&gt;.&lt;/p&gt;
 
