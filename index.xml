@@ -332,7 +332,7 @@ knitr::kable(table_3, caption = &amp;quot;&amp;quot;)
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;superscript ^14^C&lt;/td&gt;
+&lt;td&gt;superscript &lt;sup&gt;14&lt;/sup&gt;C&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;^14^C&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
