@@ -297,16 +297,46 @@ knitr::kable(table_3, caption = &amp;quot;&amp;quot;)
 
 &lt;p&gt;Typically in writing for research we need to include special symbols that are not part of the common character set. The following table shows how to generate commonly used symbols in a R Markdown document, the notation surrounded by dollar signs &lt;code&gt;$&lt;/code&gt; is LaTeX notation:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;
-Symbol  | Markdown/LaTeX notation 
-------------- | -------------
-per mille  ‰  | `$\text{\textperthousand}$`
-delta δ  | `$\delta$` 
-plus-minus ± | `$\pm$` 
-degree ° | `$\text{\textdegree}$`
-subscript CO~2~ | `CO~2~`
-superscript ^14^C | `^14^C`
-&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Symbol&lt;/th&gt;
+&lt;th&gt;Markdown/LaTeX notation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;per mille  ‰&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\text{\textperthousand}$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;delta δ&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\delta$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;plus-minus ±&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\pm$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;degree °&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$\text{\textdegree}$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;subscript CO~2~&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CO~2~&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;superscript ^14^C&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;^14^C&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </description>
     </item>
     
