@@ -215,6 +215,5 @@ symmetry_df_with_data_and_pca_scores %>%
     max = max(sym, na.rm = TRUE),
     cv = sd(sym, na.rm = TRUE)/mean(sym, na.rm = TRUE)*100)
 
-knitr::kable(table_3)
 
 
