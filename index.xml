@@ -327,7 +327,7 @@ knitr::kable(table_3, caption = &amp;quot;&amp;quot;)
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;subscript CO~2~&lt;/td&gt;
+&lt;td&gt;subscript CO&lt;sub&gt;2~&lt;/sub&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;CO~2~&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
