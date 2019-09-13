@@ -239,6 +239,10 @@ tpsfile &amp;lt;-
 &lt;pre&gt;&lt;code&gt;
 Then knit the Rmd document right away to see how the output looks.
 
+The new code uses some R packages that we should register in our compendium. We can use the function `rrtools::add_dependencies_to_description()` that will scan the Rmd file, identify libraries used in there, and add them to the DESCRIPTION file. This will register all used R packages in the compendium. 
+
+Please run `rrtools::add_dependencies_to_description()` now, and commit &amp;amp; push to GitHub
+
 ## Captions &amp;amp; cross-references
 
 There are two commonly used methods to add captions. First is in the code chunk header, like this:
