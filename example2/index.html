@@ -405,6 +405,27 @@ knitr::kable(table_3, caption = &quot;&quot;)
 
 <h2 id="citations-and-references">Citations and references</h2>
 
+<p>Citations go inside square brackets and are separated by semicolons. Each citation must have a key, composed of ‘@’ + the citation identifier from the database, and may optionally have a prefix, a locator, and a suffix. Here are some examples from <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html" target="_blank">RStudio</a>:</p>
+
+<pre><code>Blah blah [see @doe99, pp. 33-35; also @smith04, ch. 1].
+
+Blah blah [@doe99, pp. 33-35, 38-39 and *passim*].
+
+Blah blah [@smith04; @doe99].
+</code></pre>
+
+<p>A minus sign (-) before the @ will suppress mention of the author in the citation. This can be useful when the author is already mentioned in the text:</p>
+
+<pre><code>Smith says blah [-@smith04].
+</code></pre>
+
+<p>You can also write an in-text citation, as follows:</p>
+
+<pre><code>@smith04 says blah.
+
+@smith04 [p. 33] says blah.
+</code></pre>
+
 <h2 id="special-characters-for-scientific-writing">Special characters for scientific writing</h2>
 
 <p>Typically in writing for research we need to include special symbols that are not part of the common character set. The following table shows how to generate commonly used symbols in a R Markdown document, the notation surrounded by dollar signs <code>$</code> is LaTeX notation:</p>
