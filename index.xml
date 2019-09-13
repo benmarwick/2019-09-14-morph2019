@@ -19,7 +19,11 @@
       <guid>https://benmarwick.github.io/2019-09-14-morph2019/example1/</guid>
       <description>
 
-&lt;p&gt;To create a reproducible research compendium step-by-step using the rrtools approach, follow these detailed instructions. We use &lt;a href=&#34;https://www.rstudio.com/products/rstudio/#Desktop&#34; target=&#34;_blank&#34;&gt;RStudio&lt;/a&gt;, and recommend it, but is not required for these steps to work. We recommend copy-pasting these directly into your console, and editing the options before running. We don&amp;rsquo;t recommend saving these lines in a script in your project: they are meant to be once-off setup functions run at the console.&lt;/p&gt;
+&lt;p&gt;This is the website for &amp;ldquo;Workshop #02 Reproducibility and Transparency in Archaeological Science using R and Related Tools&amp;rdquo;, 9:00-12:00 am 14 Sept at the &lt;a href=&#34;https://github.com/kotdijian/MORPH2019&#34; target=&#34;_blank&#34;&gt;MORPH 2019 Sendai &amp;lsquo;A conference on the Archaeological Application of Morphometrics&amp;rsquo;&lt;/a&gt;, 13-15 September 2019, at Tohoku Forum of Creativity, Tohoku University, Sendai, Japan.&lt;/p&gt;
+
+&lt;p&gt;In this workshop we will do a series of hand-on coding activities to set up and use a research compendium suitable for writing reproducible journal articles and reports using R and R Markdown. We will use the &lt;a href=&#34;https://github.com/benmarwick/rrtools&#34; target=&#34;_blank&#34;&gt;rrtools&lt;/a&gt; package, and additional documentation about the functions used in this workshop can be found in that package.&lt;/p&gt;
+
+&lt;p&gt;The slides used in the workshop can be viewed online &lt;a href=&#34;https://benmarwick.github.io/2019-09-14-morph2019/workshop-slides/Marwick-2019-09-14-morph2019-rrtools-workshop.html#1&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Please start by:&lt;/p&gt;
 
