@@ -93,19 +93,6 @@ usethis::browse_github_pat()
                     private = FALSE)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Notes:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;if you are connected to the internet, this initializes a local git repository (&lt;code&gt;use_git()&lt;/code&gt;), then &lt;code&gt;use_github()&lt;/code&gt; connects to &lt;a href=&#34;https://github.com&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt;, and creates a remote repository&lt;/li&gt;
-&lt;li&gt;if you are not connected to the internet, use &lt;code&gt;use_git()&lt;/code&gt; to initialise a local git repository for your project, and save the &lt;code&gt;use_github&lt;/code&gt; step for when you are online. Reopen your project in RStudio to see the git buttons on the toolbar.&lt;/li&gt;
-&lt;li&gt;we need to:
-
-&lt;ul&gt;
-&lt;li&gt;install and configure git &lt;em&gt;before&lt;/em&gt; running this line. See &lt;a href=&#34;http://happygitwithr.com&#34; target=&#34;_blank&#34;&gt;Happy Git With R&lt;/a&gt; for details on how to do this. Make sure to set up a &lt;a href=&#34;https://happygitwithr.com/ssh-keys.html&#34; target=&#34;_blank&#34;&gt;SSH key&lt;/a&gt; to connect to your Github account conveniently.&lt;/li&gt;
-&lt;li&gt;get a &lt;a href=&#34;https://github.com/settings/tokens&#34; target=&#34;_blank&#34;&gt;personal access token&lt;/a&gt;, and replace &amp;ldquo;xxxx&amp;rdquo; with that token. When you do so (click &amp;ldquo;Generate new token&amp;rdquo;), make sure the &amp;ldquo;repo&amp;rdquo; scope is included by checking the &amp;ldquo;repo&amp;rdquo; box. Don&amp;rsquo;t save this token in your project, keep it elsewhere.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;h2 id=&#34;make-a-readme-document-a-code-of-conduct-and-a-guide-for-contributors&#34;&gt;Make a readme document, a code of conduct and a guide for contributors&lt;/h2&gt;
 
 &lt;p&gt;Run this line:&lt;/p&gt;

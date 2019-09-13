@@ -366,19 +366,6 @@ usethis::browse_github_pat()
                     private = FALSE)
 </code></pre>
 
-<p>Notes:</p>
-
-<ul>
-<li>if you are connected to the internet, this initializes a local git repository (<code>use_git()</code>), then <code>use_github()</code> connects to <a href="https://github.com" target="_blank">GitHub</a>, and creates a remote repository</li>
-<li>if you are not connected to the internet, use <code>use_git()</code> to initialise a local git repository for your project, and save the <code>use_github</code> step for when you are online. Reopen your project in RStudio to see the git buttons on the toolbar.</li>
-<li>we need to:
-
-<ul>
-<li>install and configure git <em>before</em> running this line. See <a href="http://happygitwithr.com" target="_blank">Happy Git With R</a> for details on how to do this. Make sure to set up a <a href="https://happygitwithr.com/ssh-keys.html" target="_blank">SSH key</a> to connect to your Github account conveniently.</li>
-<li>get a <a href="https://github.com/settings/tokens" target="_blank">personal access token</a>, and replace &ldquo;xxxx&rdquo; with that token. When you do so (click &ldquo;Generate new token&rdquo;), make sure the &ldquo;repo&rdquo; scope is included by checking the &ldquo;repo&rdquo; box. Don&rsquo;t save this token in your project, keep it elsewhere.</li>
-</ul></li>
-</ul>
-
 <h2 id="make-a-readme-document-a-code-of-conduct-and-a-guide-for-contributors">Make a readme document, a code of conduct and a guide for contributors</h2>
 
 <p>Run this line:</p>
