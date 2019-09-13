@@ -21,13 +21,13 @@ class: normal
 
 # Previously...
 
+Marwick, B., Boettiger, C., & Mullen, L. (2018). Packaging data analytical work reproducibly using R (and friends). _The American Statistician_ 70 (1) : 80-88  https://doi.org/10.1080/00031305.2017.1375986
+
 Marwick, B., & Birch, S. (2018) A Standard for the Scholarly Citation of Archaeological Data as an Incentive to Data Sharing. _Advances in Archaeological Practice_ 1-19. https://doi.org/10.1017/aap.2018.3 
 
 Marwick, B, & 47 others (2017) Open science in archaeology. _SAA Archaeological Record_, 17(4), pp. 8-14. 
 
 Marwick, B. (2017). Computational reproducibility in archaeological research: Basic principles and a case study of their implementation. _Journal of Archaeological Method and Theory_, 24(2), 424-450. preprint at https://osf.io/preprints/socarxiv/q4v73/
-
-Marwick, B., Boettiger, C., & Mullen, L. (2017). Packaging data analytical work reproducibly using R (and friends). _The American Statistician_ 70 (1) : 80-88  https://doi.org/10.1080/00031305.2017.1375986
 
 Eglen, S. J., Marwick, B., Halchenko, Y. O., et al. (2017). Toward standard practices for sharing computer code and programs in neuroscience. _Nature Neuroscience_, 20(6), 770-773. preprint at https://www.biorxiv.org/content/early/2017/02/28/045104
 
@@ -67,16 +67,24 @@ class: normal
 
 # A solution: the rrtools package
 
-.large[The aim is to provide instructions, templates, and functions for making a basic compendium suitable for doing reproducible research with R]
+.medium[The aim is to provide instructions, templates, and functions for making a basic compendium suitable for doing reproducible research with R]
+
+.medium[Full documentation of today's workshop is online at:
+
+<https://benmarwick.github.io/2019-09-14-morph2019/>]
 
 ---
 class: normal
 
-# Preparation: GitHub account
+# Preparation: Do you have a GitHub account? 
 
-.large[Do you have a GitHub account? We will need one for some steps today. If you don't, please go to <https://github.com/> and create an account (make a note of your username and password!)]   
+.large[We will need one for some steps today. If not, please create an account at <https://github.com/>.
 
+Make a note of your username and password! <i class="fa fa-music"></i>]   
 
+```{r echo = FALSE}
+countdown::countdown(minutes = 5, seconds = 0, bottom = 0, font_size = "2em")
+```
 
 ---
 class: normal
@@ -85,8 +93,11 @@ class: normal
 
 .medium[Please open this webpage <https://rstudio.cloud/project/493309> and log in with your GitHub account.
 
-
 We will use RStudio in the cloud to ensure that we all have the same system with the same packages available.] 
+
+```{r echo = FALSE}
+countdown::countdown(minutes = 5, seconds = 0, left = 0)
+```
 
 ---
 class: normal
@@ -100,7 +111,11 @@ rrtools::use_compendium("myprojname",  # use a meaningful name :)
                         open = FALSE) 
 ```
 
-Why? Using a widely recognised file structure makes it easier for you to navigate, and easier for others to browse and inspect your work.
+<i class="fa fa-question-circle"></i> Using a widely recognised file structure makes it easier for you to navigate, and easier for others to browse and inspect your work.
+
+```{r echo = FALSE}
+countdown::countdown(minutes = 5, seconds = 0, left = 0)
+```
 
 ---
 class: normal
@@ -115,7 +130,11 @@ usethis::use_mit_license(name = "My Name")
 
 To use a different license, replace this line with `usethis::use_gpl3_license(name = "My Name")`, or follow the instructions for other licenses
 
-Why? To make it clear that you're happy for others to use your code, and that you're not responsible if they have problems. 
+<i class="fa fa-question-circle"></i> To make it clear that you're happy for others to use your code, and that you're not responsible if they have problems. 
+
+```{r echo = FALSE}
+countdown::countdown(minutes = 5, seconds = 0, left = 0)
+```
 
 ---
 class: normal
@@ -131,7 +150,11 @@ usethis::use_git_config(user.name = "Ben Marwick",
 usethis::git_sitrep()
 ```
 
-And let's make sure we have an account at <https://github.com> to back-up our compendium and collaborate with our colleagues
+<i class="fa fa-exclamation-triangle"></i> This is a one-time setup step that you only ever need to do once per computer, not necessary each time you make a compendium project.
+
+```{r echo = FALSE}
+countdown::countdown(minutes = 5, seconds = 0, left = 0)
+```
 
 ---
 
@@ -145,7 +168,11 @@ This initializes a local git repository so we can use version control with our p
 usethis::use_git()
 ```
 
-Why? To increase the transparency, efficiency and accessibility of your work. 
+<i class="fa fa-question-circle"></i> To increase the transparency, efficiency and accessibility of your work. 
+
+```{r echo = FALSE}
+countdown::countdown(minutes = 5, seconds = 0, left = 0)
+```
 ---
 class: normal
 
@@ -159,13 +186,18 @@ Now we are going to get a secret code to control GitHub from our RStudio
 usethis::browse_github_pat() 
 # get a token from https://github.com/settings/tokens
 usethis::edit_r_environ() 
-# Paste your copied PAT into your .Renviron file as system variable: 
+# Paste your copied PAT into your .Renviron file: 
 # GITHUB_PAT=XXXXXX
 # check it
 usethis::git_sitrep()
 ```
 
-Why? To increase the transparency, efficiency and accessibility of your work. 
+<i class="fa fa-exclamation-triangle"></i> This is a one-time setup step that you only ever need to do once per computer, not necessary each time you make a compendium project.
+
+```{r echo = FALSE}
+countdown::countdown(minutes = 10, seconds = 0, left = 0)
+```
+
 ---
 
 class: normal
@@ -182,7 +214,11 @@ usethis::use_github(protocol = "https",
 
 You can also create a private repository. GitHub is what most people are using, but there other good options, such as GitLab
 
-Why? To increase the transparency, efficiency and accessibility of your work. 
+<i class="fa fa-question-circle"></i> To increase the transparency, efficiency and accessibility of your work. 
+
+```{r echo = FALSE}
+countdown::countdown(minutes = 5, seconds = 0, left = 0)
+```
 
 ---
 
@@ -199,7 +235,11 @@ This generates README.Rmd and renders it to README.md, ready to display on GitHu
 rrtools::use_readme_rmd()
 ```
 
-Why? To improve the accessibility of your work by communicating with to others the purpose of your work, how you want it cited. To manage expectations for how others can interact with it.
+<i class="fa fa-question-circle"></i> To improve the accessibility of your work by communicating with to others the purpose of your work, how you want it cited. To manage expectations for how others can interact with it.
+
+```{r echo = FALSE}
+countdown::countdown(minutes = 5, seconds = 0, left = 0)
+```
 
 ---
 class: normal
@@ -217,7 +257,7 @@ This creates a research compendium file structure and add template documents suc
 rrtools::use_analysis()
 ```
 
-Why? To write code and text in a reproducible document. To keep your work organised so you can be more efficient, and your project is easier for others to browse. 
+<i class="fa fa-question-circle"></i> To write code and text in a reproducible document. To keep your work organised so you can be more efficient, and your project is easier for others to browse. 
 
 ---
 class: normal
@@ -274,7 +314,7 @@ rrtools::use_travis()
 usethis::use_testthat()
 ```
 
-Why? To avoid dependency complications and streamline trouble-shooting
+<i class="fa fa-question-circle"></i> To avoid dependency complications and streamline trouble-shooting
 
 ---
 class: normal
@@ -288,7 +328,7 @@ We have not attempted to automate depositing the compendium in a repository.
 rrtools::deposit_compendium()
 ```
 
-Why? Because it's not clear to us what the most sensible options are for most people. There are many trustworthy repositories you could use. You may not want to share some or all of your data or intermediate products. 
+<i class="fa fa-question-circle"></i> Because it's not clear to us what the most sensible options are for most people. There are many trustworthy repositories you could use. You may not want to share some or all of your data or intermediate products. 
 
 So we leave this up to you, and encourage you to make available as much as possible.
 
