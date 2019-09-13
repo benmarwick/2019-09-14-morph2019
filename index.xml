@@ -190,7 +190,7 @@ usethis::browse_github_pat()
 
 &lt;p&gt;Now add a &lt;strong&gt;chunk of code&lt;/strong&gt; to your &lt;code&gt;paper.Rmd&lt;/code&gt; that looks exactly like this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;```{r get-data}
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;```{r get-ch-data}
 database &amp;lt;- 
   read_csv(here::here(&#39;analysis/data/raw_data/Hoggard_et_al_2019.csv&#39;))
 

@@ -96,7 +96,8 @@ class: normal
 This is `devtools::create()` with an additional step to either start the project in RStudio, or set the working directory to the package location, if not using RStudio: 
 
 ```{r eval=FALSE, tidy=FALSE}
-rrtools::use_compendium("myprojname") # use a meaningful name :)
+rrtools::use_compendium("myprojname",  # use a meaningful name :)
+                        open = FALSE) 
 ```
 
 Why? Using a widely recognised file structure makes it easier for you to navigate, and easier for others to browse and inspect your work.
