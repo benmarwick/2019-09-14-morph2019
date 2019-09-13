@@ -310,6 +310,8 @@ Please start by:"><meta property="og:image" content="https://benmarwick.github.i
 <pre><code>rrtools::use_compendium(&quot;pkgname&quot;)
 </code></pre>
 
+<p>Notes:</p>
+
 <ul>
 <li>this uses <code>usethis::create_package()</code> to create a basic R package with the name <code>pkgname</code> (you should use a different one), and then, if you&rsquo;re using RStudio, opens the project. If you&rsquo;re not using RStudio, it sets the working directory to the <code>pkgname</code> directory.</li>
 <li>we need to:
@@ -327,6 +329,8 @@ Please start by:"><meta property="og:image" content="https://benmarwick.github.i
 
 <pre><code>usethis::use_mit_license(name = &quot;My Name&quot;)
 </code></pre>
+
+<p>Notes:</p>
 
 <ul>
 <li>this adds a reference to the MIT license in the DESCRIPTION file and generates a LICENSE file listing the name provided as the copyright holder</li>
@@ -362,6 +366,8 @@ usethis::browse_github_pat()
                     private = FALSE)
 </code></pre>
 
+<p>Notes:</p>
+
 <ul>
 <li>if you are connected to the internet, this initializes a local git repository (<code>use_git()</code>), then <code>use_github()</code> connects to <a href="https://github.com" target="_blank">GitHub</a>, and creates a remote repository</li>
 <li>if you are not connected to the internet, use <code>use_git()</code> to initialise a local git repository for your project, and save the <code>use_github</code> step for when you are online. Reopen your project in RStudio to see the git buttons on the toolbar.</li>
@@ -382,6 +388,8 @@ usethis::browse_github_pat()
 
 <p>Then commit and push to GitHub, then browse your files on GitHub and see how the Readme file looks.</p>
 
+<p>Notes:</p>
+
 <ul>
 <li>this generates README.Rmd and renders it to README.md, ready to display on GitHub. It contains:
 
@@ -401,6 +409,8 @@ usethis::browse_github_pat()
 </code></pre>
 
 <p>Then knit the Rmd document right away to see how the template looks.</p>
+
+<p>Notes:</p>
 
 <ul>
 <li>this function has three <code>location =</code> options: <code>top_level</code> to create a top-level <code>analysis/</code> directory, <code>inst</code> to create an <code>inst/</code> directory (so that all the sub-directories are available after the package is installed), and <code>vignettes</code> to create a <code>vignettes/</code> directory (and automatically update the <code>DESCRIPTION</code>). The default is a top-level <code>analysis/</code>.</li>

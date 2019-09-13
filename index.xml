@@ -37,6 +37,8 @@
 &lt;pre&gt;&lt;code&gt;rrtools::use_compendium(&amp;quot;pkgname&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;Notes:&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;this uses &lt;code&gt;usethis::create_package()&lt;/code&gt; to create a basic R package with the name &lt;code&gt;pkgname&lt;/code&gt; (you should use a different one), and then, if you&amp;rsquo;re using RStudio, opens the project. If you&amp;rsquo;re not using RStudio, it sets the working directory to the &lt;code&gt;pkgname&lt;/code&gt; directory.&lt;/li&gt;
 &lt;li&gt;we need to:
@@ -54,6 +56,8 @@
 
 &lt;pre&gt;&lt;code&gt;usethis::use_mit_license(name = &amp;quot;My Name&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notes:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;this adds a reference to the MIT license in the DESCRIPTION file and generates a LICENSE file listing the name provided as the copyright holder&lt;/li&gt;
@@ -89,6 +93,8 @@ usethis::browse_github_pat()
                     private = FALSE)
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;Notes:&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;if you are connected to the internet, this initializes a local git repository (&lt;code&gt;use_git()&lt;/code&gt;), then &lt;code&gt;use_github()&lt;/code&gt; connects to &lt;a href=&#34;https://github.com&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt;, and creates a remote repository&lt;/li&gt;
 &lt;li&gt;if you are not connected to the internet, use &lt;code&gt;use_git()&lt;/code&gt; to initialise a local git repository for your project, and save the &lt;code&gt;use_github&lt;/code&gt; step for when you are online. Reopen your project in RStudio to see the git buttons on the toolbar.&lt;/li&gt;
@@ -109,6 +115,8 @@ usethis::browse_github_pat()
 
 &lt;p&gt;Then commit and push to GitHub, then browse your files on GitHub and see how the Readme file looks.&lt;/p&gt;
 
+&lt;p&gt;Notes:&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;this generates README.Rmd and renders it to README.md, ready to display on GitHub. It contains:
 
@@ -128,6 +136,8 @@ usethis::browse_github_pat()
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Then knit the Rmd document right away to see how the template looks.&lt;/p&gt;
+
+&lt;p&gt;Notes:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;this function has three &lt;code&gt;location =&lt;/code&gt; options: &lt;code&gt;top_level&lt;/code&gt; to create a top-level &lt;code&gt;analysis/&lt;/code&gt; directory, &lt;code&gt;inst&lt;/code&gt; to create an &lt;code&gt;inst/&lt;/code&gt; directory (so that all the sub-directories are available after the package is installed), and &lt;code&gt;vignettes&lt;/code&gt; to create a &lt;code&gt;vignettes/&lt;/code&gt; directory (and automatically update the &lt;code&gt;DESCRIPTION&lt;/code&gt;). The default is a top-level &lt;code&gt;analysis/&lt;/code&gt;.&lt;/li&gt;
@@ -238,6 +248,8 @@ knitr::read_chunk(&#39;Hoggard_et_al_2019_BM.R&#39;)
 ```{r table-3}
 ```
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then knit the Rmd document right away to see how the output looks.&lt;/p&gt;
 
 &lt;h2 id=&#34;captions-cross-references&#34;&gt;Captions &amp;amp; cross-references&lt;/h2&gt;
 
